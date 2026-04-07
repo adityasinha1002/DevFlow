@@ -1,8 +1,9 @@
 {
-  "name": "ai-coding-agent",
-  "displayName": "AI Coding Agent",
-  "description": "An autonomous coding agent powered by Gemini.",
+  "name": "devflow",
+  "displayName": "DevFlow",
+  "description": "DevFlow — an autonomous AI developer agent for VS Code powered by Gemini.",
   "version": "1.0.0",
+  "publisher": "adityasinha",
   "engines": {
     "vscode": "^1.80.0"
   },
@@ -10,28 +11,30 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:agent.start"
+    "onCommand:devflow.start"
   ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "agent.start",
-        "title": "Start AI Coding Agent"
+        "command": "devflow.start",
+        "title": "Start DevFlow AI Agent"
       }
     ]
   },
   "scripts": {
     "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./"
+    "watch": "tsc -watch -p ./",
+    "build": "npm run compile"
   },
   "dependencies": {
     "@google/genai": "latest",
+    "@modelcontextprotocol/sdk": "latest",
     "dotenv": "^16.4.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
     "@types/vscode": "^1.80.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.4.0"
   }
 }
